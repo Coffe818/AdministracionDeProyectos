@@ -59,7 +59,8 @@
         </div>
       </section>
 
-      <!-- SECCIÓN BIBLIOTECA -->
+
+      <!-- ================= SECCIÓN BIBLIOTECA (CON IMÁGENES) ================= -->
       <section *ngIf="activeView === 'biblioteca'" class="content-section">
         <div *ngIf="libraryData$ | async as data">
           <div class="library-info">
@@ -72,20 +73,31 @@
           <h4>Salas y Espacios Disponibles:</h4>
           <div class="rooms-grid">
             <div *ngFor="let room of data.salas_y_espacios" class="room-card">
-              <strong>{{ room.name }}</strong>
-              <p>Capacidad: {{ room.capacity }}</p>
-              <p>Equipo: {{ room.equipment }}</p>
+              <img *ngIf="room.image_url" [src]="room.image_url" [alt]="room.name" class="room-image">
+              <div class="room-details">
+                <strong>{{ room.name }}</strong>
+                <p>Capacidad: {{ room.capacity }}</p>
+                <p>Equipo: {{ room.equipment }}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECCIÓN CAMPOS DEPORTIVOS -->
+ <!-- ================= SECCIÓN CAMPOS DEPORTIVOS (CON GALERÍA Y SCROLL) ================= -->
       <section *ngIf="activeView === 'campos'" class="content-section">
-        <div *ngIf="sportFields$ | async as fields">
-          <div *ngFor="let field of fields" class="info-item">
-            <strong>{{ field.name }}</strong>
+        <div *ngIf="sportFields$ | async as fields" class="sport-fields-list">
+          <!-- Hacemos un loop por cada "cancha" (que ahora es una galería) -->
+          <div *ngFor="let field of fields" class="sport-field-group">
+            <h3>{{ field.name }}</h3>
             <p>{{ field.location }}</p>
+            
+            <!-- La galería con scroll lateral -->
+            <div class="image-gallery-scroll">
+              <div *ngFor="let image of field.images" class="gallery-card">
+                <img [src]="image.url" [alt]="image.alt_text">
+              </div>
+            </div>
           </div>
         </div>
       </section>
