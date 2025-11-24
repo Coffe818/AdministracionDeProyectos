@@ -1,3 +1,9 @@
+.space {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+}
+
 :host {
   display: flex;
   flex-direction: column;
@@ -11,7 +17,7 @@
   align-items: center;
   padding: 16px;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .header h1 {
@@ -20,7 +26,8 @@
   text-align: center;
   flex-grow: 1;
   margin: 0;
-  margin-right: 24px; /* Para compensar el botón de atrás */
+  margin-right: 24px;
+  /* Para compensar el botón de atrás */
 }
 
 .back-button {
@@ -82,12 +89,14 @@
 
 .status-badge.completed {
   background-color: #c6f6d5;
-  color: #276749; /* Verde */
+  color: #276749;
+  /* Verde */
 }
 
 .status-badge.pending {
   background-color: #feebc8;
-  color: #9c4221; /* Naranja */
+  color: #9c4221;
+  /* Naranja */
 }
 
 .btn-ver {
@@ -100,12 +109,15 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 .details-section {
-  background-color: #f7fafc; /* Un gris muy clarito para diferenciar */
+  background-color: #f7fafc;
+  /* Un gris muy clarito para diferenciar */
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 12px;
-  animation: fadeIn 0.3s ease-in; /* Animación suave */
+  animation: fadeIn 0.3s ease-in;
+  /* Animación suave */
 }
 
 .detail-divider {
@@ -133,7 +145,8 @@
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  color: #e53e3e; /* Rojo */
+  color: #e53e3e;
+  /* Rojo */
   margin-top: 8px;
 }
 
@@ -141,6 +154,7 @@
 .complete-all-wrapper {
   padding: 16px;
 }
+
 .btn-complete-all {
   width: 100%;
   padding: 14px;
@@ -151,14 +165,28 @@
   border-radius: 12px;
   font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: background .2s ease, transform .2s ease;
 }
-.btn-complete-all:hover:enabled { background:#047a00; }
-.btn-complete-all:disabled { opacity:.6; cursor: default; }
+
+.btn-complete-all:hover:enabled {
+  background: #047a00;
+}
+
+.btn-complete-all:disabled {
+  opacity: .6;
+  cursor: default;
+}
 
 /* Animación simple */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

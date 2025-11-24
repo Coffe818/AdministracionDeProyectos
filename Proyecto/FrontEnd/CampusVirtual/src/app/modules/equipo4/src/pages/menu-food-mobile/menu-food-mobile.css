@@ -1,9 +1,16 @@
+.space {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+}
+
 :host {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: #f7fafc;
-  font-family: 'Inter', sans-serif; /* Aseguramos una fuente bonita */
+  font-family: 'Inter', sans-serif;
+  /* Aseguramos una fuente bonita */
 }
 
 /* 1. BARRA SUPERIOR Y BÚSQUEDA */
@@ -23,11 +30,13 @@
   border-radius: 20px;
   height: 40px;
   border: none;
-  background-color: #f1f5f9; /* Gris clarito */
+  background-color: #f1f5f9;
+  /* Gris clarito */
   padding: 0 16px;
   font-size: 0.9rem;
   color: #4a5568;
-  box-sizing: border-box; /* Para que el padding no rompa el ancho */
+  box-sizing: border-box;
+  /* Para que el padding no rompa el ancho */
 }
 
 .search-bar:focus {
@@ -41,31 +50,41 @@
   justify-content: flex-start;
   padding: 12px 16px;
   background-color: #f7fafc;
-  overflow-x: auto; /* Scroll horizontal si no caben */
-  -webkit-overflow-scrolling: touch; /* Inercia en iOS */
-  scroll-snap-type: x proximity; /* Efecto carrusel suave */
+  overflow-x: auto;
+  /* Scroll horizontal si no caben */
+  -webkit-overflow-scrolling: touch;
+  /* Inercia en iOS */
+  scroll-snap-type: x proximity;
+  /* Efecto carrusel suave */
   margin: 10px;
 }
 
 .filter-button {
   background-color: white;
   border: 1px solid #e2e8f0;
-  border-radius: 20px; /* Redondeado como pastilla */
+  border-radius: 20px;
+  /* Redondeado como pastilla */
   padding: 8px 16px;
   font-size: 0.9rem;
   font-weight: bold;
   color: #4a5568;
   cursor: pointer;
   transition: all 0.2s;
-  flex: 0 0 auto; /* No crecer/encoger, ancho según contenido */
-  white-space: nowrap; /* No hacer wrap del texto */
-  overflow: hidden; /* Ocultar desborde si el texto es muy largo */
-  text-overflow: ellipsis; /* Mostrar '...' si se recorta */
-  scroll-snap-align: start; /* Alinear con el borde al hacer scroll */
+  flex: 0 0 auto;
+  /* No crecer/encoger, ancho según contenido */
+  white-space: nowrap;
+  /* No hacer wrap del texto */
+  overflow: hidden;
+  /* Ocultar desborde si el texto es muy largo */
+  text-overflow: ellipsis;
+  /* Mostrar '...' si se recorta */
+  scroll-snap-align: start;
+  /* Alinear con el borde al hacer scroll */
 }
 
 .filter-button.active {
-  background-color: #e53e3e; /* Rojo */
+  background-color: #e53e3e;
+  /* Rojo */
   color: white;
   border-color: #e53e3e;
   box-shadow: 0 2px 6px rgba(229, 62, 62, 0.3);
@@ -83,8 +102,10 @@
 
 .cafe-imagen {
   width: 100%;
-  height: 150px; /* ¡IMPORTANTE! Fija la altura */
-  object-fit: cover; /* Recorta la imagen para que no se estire */
+  height: 150px;
+  /* ¡IMPORTANTE! Fija la altura */
+  object-fit: cover;
+  /* Recorta la imagen para que no se estire */
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   margin-bottom: 8px;
@@ -101,14 +122,16 @@
   font-size: 0.9rem;
   color: #000000;
   margin: 4px 0 0 0;
-  font-weight: 700; /* Negrita */
+  font-weight: 700;
+  /* Negrita */
 }
 
 /* 4. LISTA DE PRODUCTOS */
 .product-list {
   flex-grow: 1;
   padding: 16px;
-  padding-bottom: 100px; /* Espacio extra para que no tape el botón flotante */
+  padding-bottom: 100px;
+  /* Espacio extra para que no tape el botón flotante */
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -117,13 +140,14 @@
 /* 5. BOTÓN FLOTANTE DEL CARRITO */
 .fab-carrito {
   position: fixed;
-  bottom: 90px; /* Arriba del footer */
-  right: 20px;  
+  bottom: 90px;
+  /* Arriba del footer */
+  right: 20px;
   width: 60px;
   height: 60px;
   background-color: white;
   border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,8 +161,10 @@
 .btn-pedidos-mobile {
   position: fixed;
   /* Arriba del FAB del carrito (carrito bottom 90) */
-  bottom: 155px; /* claramente por encima */
-  right: 20px; /* alineado con el carrito */
+  bottom: 155px;
+  /* claramente por encima */
+  right: 20px;
+  /* alineado con el carrito */
   background: #059600;
   color: #fff;
   font-weight: 600;
@@ -149,13 +175,16 @@
   justify-content: center;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   font-size: 15px;
   z-index: 999;
   transition: background .2s ease, transform .2s ease;
 }
 
-.btn-pedidos-mobile:hover { background: #047a00; transform: translateY(-2px); }
+.btn-pedidos-mobile:hover {
+  background: #047a00;
+  transform: translateY(-2px);
+}
 
 .fab-carrito:active {
   transform: scale(0.95);
@@ -171,7 +200,8 @@
   position: absolute;
   top: -2px;
   right: -2px;
-  background-color: #48bb78; /* Verde */
+  background-color: #48bb78;
+  /* Verde */
   color: white;
   font-size: 0.75rem;
   font-weight: bold;
@@ -215,7 +245,8 @@
 }
 
 .nav-item span:first-child {
-  font-size: 16px; /* Tamaño del icono emoji */
+  font-size: 16px;
+  /* Tamaño del icono emoji */
   margin-bottom: 4px;
 }
 

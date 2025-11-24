@@ -1,3 +1,5 @@
+<div class="space"></div>
+
 <div class="filter-buttons">
   <button class="filter-button" *ngFor="let s of standFilters" [class.active]="selectedCategory === s.id"
     (click)="filterFoods(s.id)">
@@ -23,18 +25,3 @@
 </a>
 
 <a *ngIf="hasOrders" routerLink="/equipo4/pedidos" class="btn-pedidos-mobile">Pedidos</a>
-
-<div class="bottom-nav">
-  <a routerLink="/equipo1" class="nav-item">
-    <span>Equipo 1</span>
-  </a>
-  <a routerLink="/equipo2" class="nav-item">
-    <span>Equipo 2</span>
-  </a>
-  <a routerLink="/equipo3" class="nav-item">
-    <span>Equipo 3</span>
-  </a>
-  <a routerLink="/equipo4" class="nav-item">
-    <span>Equipo 4</span>
-  </a>
-</div>
